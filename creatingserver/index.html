@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+<script>
+    function sendRequest(){
+        const a= document.getElementById("a").value;
+        const b =document.getElementById("b").value;
+        axios.post("http://localhost:3000/sum",{ // if we run a command named as npx serve on a specific folder then it will serves the folder to that http server 
+            a : a,
+            b : b
+        })
+    }
+</script>
+<body>
+    
+    <input id="a" type="text" placeholder="First value"></input>
+    <input id="b" text="text" placeholder="second value"></input>
+
+    <button onclick="sendRequest()">Find sum</button>
+</body>
+</html>
+
+
+
+<!-- <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+        async function sendRequest() {
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            const response = await axios.post("http://localhost:3000/sum", {
+                a: a,
+                b: b
+            })
+            console.log(response.data);
+        }
+        // servers a folder over http
+    </script>
+</head>
+<body>
+    <input id="a" type="text" placeholder="First value"></input>
+    <input id="b" type="text" placeholder="Second value"></input>
+
+    <button onclick="sendRequest()">Find sum</button>
+
+</body> -->
